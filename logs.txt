@@ -1,0 +1,312 @@
+engineer@notebook:~/codes/atividadesFaculdade/atividadeSistemasDistribuidos/atividade3$ docker compose down --volumes 
+WARN[0000] /home/engineer/codes/atividadesFaculdade/atividadeSistemasDistribuidos/atividade3/docker-compose.yaml: `version` is obsolete 
+[+] Running 7/7
+ ✔ Container atividade3-primeiro-1       Removed                                                                                                 0.0s 
+ ✔ Container atividade3-segundo-1        Removed                                                                                                 0.0s 
+ ✔ Container atividade3-terceiro-1       Removed                                                                                                 0.0s 
+ ✔ Volume atividade3_volume_terceiro_no  Removed                                                                                                 0.0s 
+ ✔ Volume atividade3_volume_primeiro_no  Removed                                                                                                 0.0s 
+ ✔ Volume atividade3_volume_segundo_no   Removed                                                                                                 0.0s 
+ ✔ Network atividade3_udp_network        Removed                                                                                                 0.2s 
+engineer@notebook:~/codes/atividadesFaculdade/atividadeSistemasDistribuidos/atividade3$ docker compose up --build --remove-orphans 
+WARN[0000] /home/engineer/codes/atividadesFaculdade/atividadeSistemasDistribuidos/atividade3/docker-compose.yaml: `version` is obsolete 
+[+] Building 0.5s (20/28)                                                                                                              docker:default
+ => [segundo internal] load build definition from Dockerfile                                                                                     0.0s
+ => => transferring dockerfile: 633B                                                                                                             0.0s
+ => [terceiro internal] load metadata for docker.io/library/node:22.14-alpine3.20                                                                0.0s
+ => [segundo internal] load .dockerignore                                                                                                        0.0s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [primeiro internal] load build definition from Dockerfile                                                                                    0.0s
+ => => transferring dockerfile: 633B                                                                                                             0.0s
+ => [terceiro 1/7] FROM docker.io/library/node:22.14-alpine3.20                                                                                  0.0s
+ => [segundo internal] load build context                                                                                                        0.2s
+ => => transferring context: 259B                                                                                                                0.1s
+ => [terceiro internal] load build definition from Dockerfile                                                                                    0.0s
+ => => transferring dockerfile: 633B                                                                                                             0.0s
+ => [primeiro internal] load .dockerignore                                                                                                       0.0s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [terceiro internal] load .dockerignore                                                                                                       0.0s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [primeiro internal] load build context                                                                                                       0.1s
+ => => transferring context: 259B                                                                                                                0.1s
+ => [terceiro internal] load build context                                                                                                       0.1s
+ => => transferring context: 259B                                                                                                                0.1s
+ => CACHED [segundo 2/7] WORKDIR /app                                                                                                            0.0s
+ => CACHED [segundo 3/7] RUN npm install -g typescript ts-node tsc                                                                               0.0s
+ => CACHED [segundo 4/7] COPY package*.json ./                                                                                                   0.0s
+ => CACHED [segundo 5/7] COPY tsconfig.json ./                                                                                                   0.0s
+ => CACHED [segundo 6/7] RUN npm install                                                                                                         0.0s
+ => CACHED [primeiro 7/7] COPY src ./src                                                                                                         0.0s
+ => [segundo] exporting to image                                                                                                                 0.0s
+ => => exporting layers                                                                                                                          0.0s
+ => => writing image sha256:c746445dedc635e5d94d13a8bb0ad8177bcd8ebcf124f77c0bb35daa2c5dc332                                                     0.0s
+ => => naming to docker.io/library/atividade3-segundo                                                                                            0.0s
+ => [primeiro] exporting to image                                                                                                                0.0s
+ => => exporting layers                                                                                                                          0.0s
+ => => writing image sha256:d9ee7054844b5fdb969256d890dd1e7c86ef7f84c900b943e49d0e69a02709cc                                                     0.0s
+ => => naming to docker.io/library/atividade3-primeiro                                                                                           0.0s
+ => [terceiro] exporting to image                                                                                                                0.0s
+ => => exporting layers                                                                                                                          0.0s
+ => => writing image sha256:704543dccf86e64aed16380d8a9b9a0fa85d766a6e4b146c49613bc60b7cf9d3                                                     0.0s
+ => => naming to docker.io/library/atividade3-terceiro                                                                                           0.0s
+[+] Running 7/7
+ ✔ Network atividade3_udp_network          Created                                                                                               0.1s 
+ ✔ Volume "atividade3_volume_terceiro_no"  Created                                                                                               0.0s 
+ ✔ Volume "atividade3_volume_primeiro_no"  Created                                                                                               0.0s 
+ ✔ Volume "atividade3_volume_segundo_no"   Created                                                                                               0.0s 
+ ✔ Container atividade3-terceiro-1         Created                                                                                               0.1s 
+ ✔ Container atividade3-segundo-1          Created                                                                                               0.1s 
+ ✔ Container atividade3-primeiro-1         Created                                                                                               0.1s 
+Attaching to primeiro-1, segundo-1, terceiro-1
+segundo-1   | Atrasando 10000ms para iniciar o nó...
+primeiro-1  | Atrasando 0ms para iniciar o nó...
+primeiro-1  | Arquivo de mensagens não encontrado. Iniciando com armazenamento vazio.
+primeiro-1  | Inicializando primeiro...
+primeiro-1  | Enviando requisição de entrada na rede
+terceiro-1  | Atrasando 20000ms para iniciar o nó...
+primeiro-1  | Timeout para resposta de entrada na rede
+primeiro-1  | Tentando novamente...
+primeiro-1  | Timeout para resposta de entrada na rede
+primeiro-1  | Tentativas de entrar em uma rede esgotadas
+primeiro-1  | Iniciando nova rede...
+primeiro-1  | Rede criada com sucesso
+primeiro-1  | Enviando mensagem de chat: Mensagem simulada 02mg | Index da mensagem: 1 | N. msgs:  1
+primeiro-1  | Tempo de posse do token expirado
+primeiro-1  | Unico nó na rede, renovando tempo de posso do token
+primeiro-1  | Tempo de posse do token expirado
+primeiro-1  | Unico nó na rede, renovando tempo de posso do token
+segundo-1   | Arquivo de mensagens não encontrado. Iniciando com armazenamento vazio.
+segundo-1   | Inicializando segundo...
+segundo-1   | Enviando requisição de entrada na rede
+primeiro-1  | Recebido requisição de entrada na rede, novo estado da rede:  [ 'primeiro', 'segundo' ]
+segundo-1   | Recebido resposta de entrada na rede, entrada com sucesso
+primeiro-1  | Tempo de posse do token expirado
+primeiro-1  | Iniciando passagem de token
+primeiro-1  | Passando token para o nó segundo
+segundo-1   | Recebida mensagem de passagem de token
+segundo-1   | Enviando mensagem de chat: Mensagem simulada bqlr | Index da mensagem: 2 | N. msgs:  1
+primeiro-1  | Recebida mensagem de chat: Mensagem simulada bqlr | Index da mensagem: 2  | N. msgs:  2
+segundo-1   | Tempo de posse do token expirado
+segundo-1   | Iniciando passagem de token
+segundo-1   | Passando token para o nó primeiro
+primeiro-1  | Recebida mensagem de passagem de token
+primeiro-1  | Enviando mensagem de chat: Mensagem simulada 19rd | Index da mensagem: 3 | N. msgs:  3
+segundo-1   | Recebida mensagem de chat: Mensagem simulada 19rd | Index da mensagem: 3  | N. msgs:  2
+segundo-1   | Mensagens faltando: [ 0, 1 ]
+segundo-1   | Enviando requisição de histórico de mensagens
+segundo-1   | Recebida mensagem de chat atrasada: Mensagem simulada 02mg | Index da mensagem: 1  | N. msgs:  3
+primeiro-1  | Tempo de posse do token expirado
+primeiro-1  | Iniciando passagem de token
+primeiro-1  | Passando token para o nó segundo
+segundo-1   | Recebida mensagem de passagem de token
+segundo-1   | Enviando mensagem de chat: Mensagem simulada kvp | Index da mensagem: 4 | N. msgs:  4
+primeiro-1  | Recebida mensagem de chat: Mensagem simulada kvp | Index da mensagem: 4  | N. msgs:  4
+segundo-1   | Tempo de posse do token expirado
+segundo-1   | Iniciando passagem de token
+segundo-1   | Passando token para o nó primeiro
+primeiro-1  | Recebida mensagem de passagem de token
+primeiro-1  | Enviando mensagem de chat: Mensagem simulada fm1f | Index da mensagem: 5 | N. msgs:  5
+segundo-1   | Recebida mensagem de chat: Mensagem simulada fm1f | Index da mensagem: 5  | N. msgs:  5
+terceiro-1  | Arquivo de mensagens não encontrado. Iniciando com armazenamento vazio.
+terceiro-1  | Inicializando terceiro...
+terceiro-1  | Enviando requisição de entrada na rede
+primeiro-1  | Recebido requisição de entrada na rede, novo estado da rede:  [ 'primeiro', 'segundo', 'terceiro' ]
+terceiro-1  | Recebido resposta de entrada na rede, entrada com sucesso
+primeiro-1  | Tempo de posse do token expirado
+primeiro-1  | Iniciando passagem de token
+primeiro-1  | Passando token para o nó segundo
+segundo-1   | Recebida mensagem de passagem de token
+segundo-1   | Enviando mensagem de chat: Mensagem simulada zok8 | Index da mensagem: 6 | N. msgs:  6
+primeiro-1  | Recebida mensagem de chat: Mensagem simulada zok8 | Index da mensagem: 6  | N. msgs:  6
+terceiro-1  | Recebida mensagem de chat: Mensagem simulada zok8 | Index da mensagem: 6  | N. msgs:  1
+terceiro-1  | Mensagens faltando: [ 0, 1, 2, 3, 4, 5 ]
+terceiro-1  | Enviando requisição de histórico de mensagens
+segundo-1   | Tempo de posse do token expirado
+segundo-1   | Iniciando passagem de token
+segundo-1   | Passando token para o nó terceiro
+terceiro-1  | Recebida mensagem de passagem de token
+terceiro-1  | Enviando mensagem de chat: Mensagem simulada i1di | Index da mensagem: 7 | N. msgs:  2
+primeiro-1  | Recebida mensagem de chat: Mensagem simulada i1di | Index da mensagem: 7  | N. msgs:  7
+segundo-1   | Recebida mensagem de chat: Mensagem simulada i1di | Index da mensagem: 7  | N. msgs:  7
+terceiro-1  | Tempo de posse do token expirado
+terceiro-1  | Iniciando passagem de token
+terceiro-1  | Passando token para o nó primeiro
+primeiro-1  | Recebida mensagem de passagem de token
+primeiro-1  | Enviando mensagem de chat: Mensagem simulada r9tm | Index da mensagem: 8 | N. msgs:  8
+terceiro-1  | Recebida mensagem de chat: Mensagem simulada r9tm | Index da mensagem: 8  | N. msgs:  3
+segundo-1   | Recebida mensagem de chat: Mensagem simulada r9tm | Index da mensagem: 8  | N. msgs:  8
+terceiro-1  | Mensagens faltando: [ 0, 1, 2, 3, 4, 5 ]
+terceiro-1  | Enviando requisição de histórico de mensagens
+terceiro-1  | Recebida mensagem de chat atrasada: Mensagem simulada 02mg | Index da mensagem: 1  | N. msgs:  4
+terceiro-1  | Recebida mensagem de chat atrasada: Mensagem simulada bqlr | Index da mensagem: 2  | N. msgs:  5
+terceiro-1  | Recebida mensagem de chat atrasada: Mensagem simulada 19rd | Index da mensagem: 3  | N. msgs:  6
+terceiro-1  | Recebida mensagem de chat atrasada: Mensagem simulada kvp | Index da mensagem: 4  | N. msgs:  7
+terceiro-1  | Recebida mensagem de chat atrasada: Mensagem simulada fm1f | Index da mensagem: 5  | N. msgs:  8
+primeiro-1  | Tempo de posse do token expirado
+primeiro-1  | Iniciando passagem de token
+primeiro-1  | Passando token para o nó segundo
+segundo-1   | Recebida mensagem de passagem de token
+segundo-1   | Enviando mensagem de chat: Mensagem simulada yn8q | Index da mensagem: 9 | N. msgs:  9
+terceiro-1  | Recebida mensagem de chat: Mensagem simulada yn8q | Index da mensagem: 9  | N. msgs:  9
+primeiro-1  | Recebida mensagem de chat: Mensagem simulada yn8q | Index da mensagem: 9  | N. msgs:  9
+segundo-1   | Tempo de posse do token expirado
+segundo-1   | Iniciando passagem de token
+segundo-1   | Passando token para o nó terceiro
+terceiro-1  | Recebida mensagem de passagem de token
+terceiro-1  | Enviando mensagem de chat: Mensagem simulada su7 | Index da mensagem: 10 | N. msgs:  10
+primeiro-1  | Recebida mensagem de chat: Mensagem simulada su7 | Index da mensagem: 10  | N. msgs:  10
+segundo-1   | Recebida mensagem de chat: Mensagem simulada su7 | Index da mensagem: 10  | N. msgs:  10
+terceiro-1  | Tempo de posse do token expirado
+terceiro-1  | Iniciando passagem de token
+terceiro-1  | Passando token para o nó primeiro
+primeiro-1  | Recebida mensagem de passagem de token
+primeiro-1  | Enviando mensagem de chat: Mensagem simulada xho | Index da mensagem: 11 | N. msgs:  11
+terceiro-1  | Recebida mensagem de chat: Mensagem simulada xho | Index da mensagem: 11  | N. msgs:  11
+segundo-1   | Recebida mensagem de chat: Mensagem simulada xho | Index da mensagem: 11  | N. msgs:  11
+^CGracefully stopping... (press Ctrl+C again to force)
+[+] Stopping 3/3
+ ✔ Container atividade3-primeiro-1  Stopped                                                                                                      0.3s 
+ ✔ Container atividade3-segundo-1   Stopped                                                                                                      0.4s 
+ ✔ Container atividade3-terceiro-1  Stopped                                                                                                      0.3s 
+canceled
+engineer@notebook:~/codes/atividadesFaculdade/atividadeSistemasDistribuidos/atividade3$ docker compose up --build --remove-orphans 
+WARN[0000] /home/engineer/codes/atividadesFaculdade/atividadeSistemasDistribuidos/atividade3/docker-compose.yaml: `version` is obsolete 
+[+] Building 0.5s (20/28)                                                                                                              docker:default
+ => [segundo internal] load build definition from Dockerfile                                                                                     0.0s
+ => => transferring dockerfile: 633B                                                                                                             0.0s
+ => [primeiro internal] load metadata for docker.io/library/node:22.14-alpine3.20                                                                0.0s
+ => [segundo internal] load .dockerignore                                                                                                        0.0s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [terceiro internal] load build definition from Dockerfile                                                                                    0.1s
+ => => transferring dockerfile: 633B                                                                                                             0.0s
+ => [primeiro 1/7] FROM docker.io/library/node:22.14-alpine3.20                                                                                  0.0s
+ => [segundo internal] load build context                                                                                                        0.2s
+ => => transferring context: 259B                                                                                                                0.2s
+ => [primeiro internal] load build definition from Dockerfile                                                                                    0.0s
+ => => transferring dockerfile: 633B                                                                                                             0.0s
+ => [terceiro internal] load .dockerignore                                                                                                       0.0s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [primeiro internal] load .dockerignore                                                                                                       0.0s
+ => => transferring context: 2B                                                                                                                  0.0s
+ => [terceiro internal] load build context                                                                                                       0.1s
+ => => transferring context: 259B                                                                                                                0.1s
+ => [primeiro internal] load build context                                                                                                       0.1s
+ => => transferring context: 259B                                                                                                                0.1s
+ => CACHED [segundo 2/7] WORKDIR /app                                                                                                            0.0s
+ => CACHED [segundo 3/7] RUN npm install -g typescript ts-node tsc                                                                               0.0s
+ => CACHED [segundo 4/7] COPY package*.json ./                                                                                                   0.0s
+ => CACHED [segundo 5/7] COPY tsconfig.json ./                                                                                                   0.0s
+ => CACHED [segundo 6/7] RUN npm install                                                                                                         0.0s
+ => CACHED [terceiro 7/7] COPY src ./src                                                                                                         0.0s
+ => [segundo] exporting to image                                                                                                                 0.0s
+ => => exporting layers                                                                                                                          0.0s
+ => => writing image sha256:c746445dedc635e5d94d13a8bb0ad8177bcd8ebcf124f77c0bb35daa2c5dc332                                                     0.0s
+ => => naming to docker.io/library/atividade3-segundo                                                                                            0.0s
+ => [terceiro] exporting to image                                                                                                                0.0s
+ => => exporting layers                                                                                                                          0.0s
+ => => writing image sha256:704543dccf86e64aed16380d8a9b9a0fa85d766a6e4b146c49613bc60b7cf9d3                                                     0.0s
+ => => naming to docker.io/library/atividade3-terceiro                                                                                           0.0s
+ => [primeiro] exporting to image                                                                                                                0.0s
+ => => exporting layers                                                                                                                          0.0s
+ => => writing image sha256:d9ee7054844b5fdb969256d890dd1e7c86ef7f84c900b943e49d0e69a02709cc                                                     0.0s
+ => => naming to docker.io/library/atividade3-primeiro                                                                                           0.0s
+[+] Running 3/0
+ ✔ Container atividade3-primeiro-1  Created                                                                                                      0.0s 
+ ✔ Container atividade3-terceiro-1  Created                                                                                                      0.0s 
+ ✔ Container atividade3-segundo-1   Created                                                                                                      0.0s 
+Attaching to primeiro-1, segundo-1, terceiro-1
+segundo-1   | Atrasando 10000ms para iniciar o nó...
+terceiro-1  | Atrasando 20000ms para iniciar o nó...
+primeiro-1  | Atrasando 0ms para iniciar o nó...
+primeiro-1  | Carregadas 11 mensagens armazenadas do arquivo.
+primeiro-1  | Inicializando primeiro...
+primeiro-1  | Enviando requisição de entrada na rede
+primeiro-1  | Timeout para resposta de entrada na rede
+primeiro-1  | Tentando novamente...
+primeiro-1  | Timeout para resposta de entrada na rede
+primeiro-1  | Tentativas de entrar em uma rede esgotadas
+primeiro-1  | Iniciando nova rede...
+primeiro-1  | Rede criada com sucesso
+primeiro-1  | Enviando mensagem de chat: Mensagem simulada wu02 | Index da mensagem: 12 | N. msgs:  12
+primeiro-1  | Tempo de posse do token expirado
+primeiro-1  | Unico nó na rede, renovando tempo de posso do token
+primeiro-1  | Tempo de posse do token expirado
+primeiro-1  | Unico nó na rede, renovando tempo de posso do token
+segundo-1   | Carregadas 11 mensagens armazenadas do arquivo.
+segundo-1   | Inicializando segundo...
+segundo-1   | Enviando requisição de entrada na rede
+primeiro-1  | Recebido requisição de entrada na rede, novo estado da rede:  [ 'primeiro', 'segundo' ]
+segundo-1   | Recebido resposta de entrada na rede, entrada com sucesso
+primeiro-1  | Tempo de posse do token expirado
+primeiro-1  | Iniciando passagem de token
+primeiro-1  | Passando token para o nó segundo
+segundo-1   | Recebida mensagem de passagem de token
+segundo-1   | Enviando mensagem de chat: Mensagem simulada c05i | Index da mensagem: 13 | N. msgs:  12
+primeiro-1  | Recebida mensagem de chat: Mensagem simulada c05i | Index da mensagem: 13  | N. msgs:  13
+segundo-1   | Tempo de posse do token expirado
+segundo-1   | Iniciando passagem de token
+segundo-1   | Passando token para o nó primeiro
+primeiro-1  | Recebida mensagem de passagem de token
+primeiro-1  | Enviando mensagem de chat: Mensagem simulada r7qk | Index da mensagem: 14 | N. msgs:  14
+segundo-1   | Recebida mensagem de chat: Mensagem simulada r7qk | Index da mensagem: 14  | N. msgs:  13
+segundo-1   | Mensagens faltando: [ 0, 12 ]
+segundo-1   | Enviando requisição de histórico de mensagens
+segundo-1   | Recebida mensagem de chat atrasada: Mensagem simulada wu02 | Index da mensagem: 12  | N. msgs:  14
+primeiro-1  | Tempo de posse do token expirado
+primeiro-1  | Iniciando passagem de token
+primeiro-1  | Passando token para o nó segundo
+segundo-1   | Recebida mensagem de passagem de token
+segundo-1   | Enviando mensagem de chat: Mensagem simulada 0ji9 | Index da mensagem: 15 | N. msgs:  15
+primeiro-1  | Recebida mensagem de chat: Mensagem simulada 0ji9 | Index da mensagem: 15  | N. msgs:  15
+segundo-1   | Tempo de posse do token expirado
+segundo-1   | Iniciando passagem de token
+segundo-1   | Passando token para o nó primeiro
+primeiro-1  | Recebida mensagem de passagem de token
+primeiro-1  | Enviando mensagem de chat: Mensagem simulada y93f | Index da mensagem: 16 | N. msgs:  16
+segundo-1   | Recebida mensagem de chat: Mensagem simulada y93f | Index da mensagem: 16  | N. msgs:  16
+terceiro-1  | Carregadas 11 mensagens armazenadas do arquivo.
+terceiro-1  | Inicializando terceiro...
+terceiro-1  | Enviando requisição de entrada na rede
+primeiro-1  | Recebido requisição de entrada na rede, novo estado da rede:  [ 'primeiro', 'segundo', 'terceiro' ]
+terceiro-1  | Recebido resposta de entrada na rede, entrada com sucesso
+primeiro-1  | Tempo de posse do token expirado
+primeiro-1  | Iniciando passagem de token
+primeiro-1  | Passando token para o nó segundo
+segundo-1   | Recebida mensagem de passagem de token
+segundo-1   | Enviando mensagem de chat: Mensagem simulada yf1r | Index da mensagem: 17 | N. msgs:  17
+primeiro-1  | Recebida mensagem de chat: Mensagem simulada yf1r | Index da mensagem: 17  | N. msgs:  17
+terceiro-1  | Recebida mensagem de chat: Mensagem simulada yf1r | Index da mensagem: 17  | N. msgs:  12
+terceiro-1  | Mensagens faltando: [ 0, 12, 13, 14, 15, 16 ]
+terceiro-1  | Enviando requisição de histórico de mensagens
+terceiro-1  | Recebida mensagem de chat atrasada: Mensagem simulada c05i | Index da mensagem: 13  | N. msgs:  13
+terceiro-1  | Recebida mensagem de chat atrasada: Mensagem simulada r7qk | Index da mensagem: 14  | N. msgs:  14
+terceiro-1  | Recebida mensagem de chat atrasada: Mensagem simulada wu02 | Index da mensagem: 12  | N. msgs:  15
+terceiro-1  | Recebida mensagem de chat atrasada: Mensagem simulada 0ji9 | Index da mensagem: 15  | N. msgs:  16
+terceiro-1  | Recebida mensagem de chat atrasada: Mensagem simulada y93f | Index da mensagem: 16  | N. msgs:  17
+segundo-1   | Tempo de posse do token expirado
+segundo-1   | Iniciando passagem de token
+segundo-1   | Passando token para o nó terceiro
+terceiro-1  | Recebida mensagem de passagem de token
+terceiro-1  | Enviando mensagem de chat: Mensagem simulada nd5r | Index da mensagem: 18 | N. msgs:  18
+primeiro-1  | Recebida mensagem de chat: Mensagem simulada nd5r | Index da mensagem: 18  | N. msgs:  18
+segundo-1   | Recebida mensagem de chat: Mensagem simulada nd5r | Index da mensagem: 18  | N. msgs:  18
+terceiro-1  | Tempo de posse do token expirado
+terceiro-1  | Iniciando passagem de token
+terceiro-1  | Passando token para o nó primeiro
+primeiro-1  | Recebida mensagem de passagem de token
+primeiro-1  | Enviando mensagem de chat: Mensagem simulada ulb | Index da mensagem: 19 | N. msgs:  19
+segundo-1   | Recebida mensagem de chat: Mensagem simulada ulb | Index da mensagem: 19  | N. msgs:  19
+terceiro-1  | Recebida mensagem de chat: Mensagem simulada ulb | Index da mensagem: 19  | N. msgs:  19
+primeiro-1  | Tempo de posse do token expirado
+primeiro-1  | Iniciando passagem de token
+primeiro-1  | Passando token para o nó segundo
+segundo-1   | Recebida mensagem de passagem de token
+segundo-1   | Enviando mensagem de chat: Mensagem simulada ei7 | Index da mensagem: 20 | N. msgs:  20
+terceiro-1  | Recebida mensagem de chat: Mensagem simulada ei7 | Index da mensagem: 20  | N. msgs:  20
+primeiro-1  | Recebida mensagem de chat: Mensagem simulada ei7 | Index da mensagem: 20  | N. msgs:  20
+^CGracefully stopping... (press Ctrl+C again to force)
+[+] Stopping 3/3
+ ✔ Container atividade3-primeiro-1  Stopped                                                                                                      0.3s 
+ ✔ Container atividade3-segundo-1   Stopped                                                                                                      0.3s 
+ ✔ Container atividade3-terceiro-1  Stopped                                                                                                      0.3s 
+canceled

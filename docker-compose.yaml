@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  primeiro:
+    build: .
+    networks:
+      - udp_network
+    environment:
+      - CONTAINER_NAME=primeiro
+    volumes:
+      - volume_primeiro_no:/app/data
+  segundo:
+    build: .
+    networks:
+      - udp_network
+    environment:
+      - CONTAINER_NAME=segundo
+      - INIT_DELAY=10000
+    volumes:
+      - volume_segundo_no:/app/data
+  terceiro:
+    build: .
+    networks:
+      - udp_network
+    environment:
+      - CONTAINER_NAME=terceiro
+      - INIT_DELAY=20000
+    volumes:
+      - volume_terceiro_no:/app/data
+networks:
+  udp_network:
+    driver: bridge
+
+volumes:
+  volume_primeiro_no:
+    driver: local
+  volume_segundo_no:
+    driver: local
+  volume_terceiro_no:
+    driver: local
